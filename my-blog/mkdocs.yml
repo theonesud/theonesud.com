@@ -1,0 +1,29 @@
+site_name: My Blog
+theme:
+    name: material
+    language: en
+    features:
+        - navigation.tracking # Adds "last visited" tracking
+        - navigation.top # Places navigation at the top
+    palette:
+        scheme: slate
+        primary: indigo
+        accent: light blue
+    favicon: images/favicon.ico
+
+extra:
+    social:
+        - icon: fontawesome/brands/github
+          link: https://github.com/theonesud
+
+markdown_extensions:
+    - toc:
+          permalink: True
+    - admonition
+    - pymdownx.superfences
+    - pymdownx.highlight
+
+plugins:
+    - seo:
+          site_url: 'https://theonesud.com'
+          site_description: 'Sudhanshu Passi\'s corner of the internet.'
