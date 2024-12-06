@@ -10,5 +10,8 @@
             "src": "/(.*)",
             "dest": "/site/$1"
         }
-    ]
+    ],
+    "buildCommand": "chmod +x build.sh && ./build.sh",
+    "outputDirectory": "site",
+    "installCommand": "pip install mkdocs-material"
 }
