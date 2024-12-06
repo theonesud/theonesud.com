@@ -11,11 +11,6 @@ theme:
         accent: light blue
     favicon: images/favicon.ico
 
-extra:
-    social:
-        - icon: fontawesome/brands/github
-          link: https://github.com/theonesud
-
 markdown_extensions:
     - toc:
           permalink: True
@@ -24,6 +19,16 @@ markdown_extensions:
     - pymdownx.highlight
 
 plugins:
-    - seo:
-          site_url: 'https://theonesud.com'
-          site_description: 'Sudhanshu Passi\'s corner of the internet.'
+    - search
+    - ultralytics:
+          verbose: true
+          enabled: true
+          add_desc: true
+          add_image: true
+          add_keywords: true
+          add_share_buttons: true
+          add_authors: true
+          add_json_ld: true
+          add_css: true
+
+site_url: https://theonesud.com
