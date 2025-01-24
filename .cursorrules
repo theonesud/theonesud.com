@@ -1,0 +1,167 @@
+{
+    "style": {
+        "typescript": {
+            "imports": {
+                "structure": [
+                    "Standard library (Node.js core modules)",
+                    "Third-party (alphabetical order)",
+                    "Local modules (absolute imports)"
+                ],
+                "examples": {
+                    "good": [
+                        "import fs from 'fs'",
+                        "import { useState } from 'react'",
+                        "import { Button } from '@/components/ui'",
+                        "import type { UserProfile } from '@/types'"
+                    ],
+                    "avoid": [
+                        "import * as Components from '../components'"
+                    ]
+                }
+            },
+            "documentation": {
+                "function_docstrings": "JSDoc-style with @param and @returns",
+                "component_docstrings": "Props interface description",
+                "type_hints": "Required for all public components and hooks"
+            },
+            "error_handling": {
+                "strategy": "Custom error boundaries and error classes",
+                "logging": {
+                    "format": "Structured JSON logs with error codes",
+                    "required_fields": [
+                        "timestamp",
+                        "severity",
+                        "errorCode",
+                        "context"
+                    ]
+                }
+            }
+        }
+    },
+    "patterns": {
+        "prefer": {
+            "state_management": {
+                "global": "Zustand/Context API",
+                "local": "useState/useReducer",
+                "server": "React Query/SWR"
+            },
+            "component_design": {
+                "composition": "Container/Presentational pattern",
+                "reusability": "Custom hooks over HOCs"
+            },
+            "testing": {
+                "unit": "Jest/React Testing Library",
+                "integration": "Cypress Component Testing",
+                "e2e": "Cypress/Playwright"
+            },
+            "styling": {
+                "css_in_js": "Styled-components/Emotion",
+                "utility_first": "Tailwind CSS"
+            }
+        },
+        "avoid": {
+            "component_inheritance": "Deep component hierarchies (>3 levels)",
+            "state_mutation": "Direct state modification",
+            "magic": "Dynamic component names without factory pattern",
+            "styling": "Inline styles except for dynamic values"
+        }
+    },
+    "philosophy": {
+        "code_principles": [
+            "Atomic component design",
+            "Colocation of related files (component.styles.ts, component.test.tsx)",
+            "Type-safe API communication",
+            "Progressive enhancement for core features"
+        ],
+        "architecture": {
+            "data_fetching": {
+                "client_side": "React Query hooks",
+                "server_side": "Next.js getServerSideProps/getStaticProps"
+            },
+            "state_flow": {
+                "validation": "Zod schemas for API responses",
+                "normalization": "Immutable updates with Immer"
+            }
+        }
+    },
+    "formatting": {
+        "quality_gates": {
+            "type_coverage": "95% TypeScript coverage",
+            "test_coverage": {
+                "unit": "90% branch coverage",
+                "e2e": "100% critical path coverage"
+            }
+        },
+        "tooling": {
+            "linting": [
+                "ESLint",
+                "TypeScript",
+                "eslint-plugin-react"
+            ],
+            "formatting": [
+                "Prettier",
+                "eslint-plugin-import"
+            ]
+        },
+        "naming": {
+            "examples": {
+                "good": [
+                    "function UserProfileCard() { ... }",
+                    "const useAuthStore = create(...)",
+                    "interface ApiResponseData { ... }"
+                ],
+                "avoid": [
+                    "function Component() { ... }",
+                    "const data = [...]"
+                ]
+            }
+        }
+    },
+    "validation": {
+        "pre_commit": [
+            "TypeScript strict mode compliance",
+            "Accessibility checks (eslint-plugin-jsx-a11y)",
+            "Bundle size analysis"
+        ],
+        "code_review": {
+            "required_checks": [
+                "Mobile responsiveness verification",
+                "Browser compatibility note",
+                "Performance metrics (Lighthouse)"
+            ]
+        }
+    },
+    "tooling": {
+        "required": {
+            "testing": [
+                "Jest",
+                "React Testing Library",
+                "MSW (Mock Service Worker)"
+            ],
+            "monitoring": [
+                "Sentry",
+                "Performance relayer"
+            ]
+        },
+        "recommended": {
+            "analysis": [
+                "Bundle Analyzer",
+                "Why Did You Render"
+            ],
+            "diagrams": [
+                "React Flow",
+                "Component storybooks"
+            ]
+        }
+    },
+    "evolution": {
+        "deprecation_policy": {
+            "timeline": "1 major version warning",
+            "required": "Codemod migration path"
+        },
+        "experimental": {
+            "marker": "Feature flags with Unleash",
+            "requirements": "A/B test integration"
+        }
+    }
+}
